@@ -1,6 +1,6 @@
 ﻿namespace TaskManagerApp
 {
-    internal class TaskManager
+    public class TaskManager
     {
         private List<Task> tasks = new List<Task>();
 
@@ -9,16 +9,17 @@
             tasks.Add(task);
         }
 
-        public void RemoveTask(string taskName)
-        {
-            tasks.RemoveAll(task => task.Name == taskName);
-        }
+        public Task GetTaskByName(string taskName) => tasks.FirstOrDefault(task => task.Name == taskName);
+
+        public void RemoveTask(string taskName) => tasks.RemoveAll(task => task.Name == taskName);
 
         public void ListTasks()
         {
             foreach (var task in tasks)
             {
-                Console.WriteLine($"{task.Name} (Due: {task.DueDate})");
+                string formattedDueDate = task.DueDate.ToString("ddd, M/d/yy");
+                Console.WriteLine("");
+                Console.WriteLine($"- {task.Name} (Due: {formattedDueDate})");
             }
         }
     }

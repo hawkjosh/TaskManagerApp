@@ -1,9 +1,9 @@
 ﻿namespace TaskManagerApp
 {
-    internal class Task
+    public class Task
     {
-        public string Name { get; }
-        public DateTime DueDate { get; }
+        public string Name { get; set; }
+        public DateTime DueDate { get; set; }
 
         public Task(string name, DateTime dueDate)
         {
