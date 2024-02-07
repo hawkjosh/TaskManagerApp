@@ -15,13 +15,13 @@
             int choice;
 
             Console.Clear();
-            Console.WriteLine("Task Manager App");
-            Console.WriteLine("----------------");
+            Console.WriteLine("ToDo App");
+            Console.WriteLine("--------");
             Console.WriteLine();
-            Console.WriteLine("1. View Tasks");
-            Console.WriteLine("2. Add Task");
-            Console.WriteLine("3. Edit Task");
-            Console.WriteLine("4. Delete Task");
+            Console.WriteLine("1. View ToDos");
+            Console.WriteLine("2. Add ToDo");
+            Console.WriteLine("3. Edit ToDo");
+            Console.WriteLine("4. Delete ToDo");
             Console.WriteLine("5. Exit");
             Console.WriteLine();
             Console.Write("Select an option:  ");
@@ -30,16 +30,16 @@
                 switch (choice)
                 {
                     case 1:
-                        ActionItem("View Tasks");
+                        ActionItem("View ToDo");
                         break;
                     case 2:
-                        ActionItem("Add Task");
+                        ActionItem("Add ToDo");
                         break;
                     case 3:
-                        ActionItem("Edit Task");
+                        ActionItem("Edit ToDo");
                         break;
                     case 4:
-                        ActionItem("Delete Task");
+                        ActionItem("Delete ToDo");
                         break;
                     case 5:
                         ShowExitMessage();
@@ -63,23 +63,23 @@
             while (showAltMenu)
             {
                 Console.ForegroundColor = ConsoleColor.DarkYellow;
-                Console.Write("< View Tasks (1) | Add Task (2) | Edit Task (3) | Delete Task (4) | Main Menu (5) | Exit (6) >  ");
+                Console.Write("< View ToDos (1) | Add ToDo (2) | Edit ToDo (3) | Delete ToDo (4) | Main Menu (5) | Exit (6) >  ");
                 Console.ResetColor();
                 if (int.TryParse(Console.ReadLine(), out choice))
                 {
                     switch (choice)
                     {
                         case 1:
-                            ActionItem("View Tasks");
+                            ActionItem("View ToDos");
                             break;
                         case 2:
-                            ActionItem("Add Task");
+                            ActionItem("Add ToDo");
                             break;
                         case 3:
-                            ActionItem("Edit Task");
+                            ActionItem("Edit ToDo");
                             break;
                         case 4:
-                            ActionItem("Delete Task");
+                            ActionItem("Delete ToDo");
                             break;
                         case 5:
                             showAltMenu = false;
@@ -139,7 +139,7 @@
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine(new string('-', errorMessage.Length));
             Console.WriteLine("|" + new string(' ', errorMessage.Length - 2) + "|");
-            Console.WriteLine("| Thanks for using ToDo App!! Press any key to exit . . . |");
+            Console.WriteLine(errorMessage);
             Console.WriteLine("|" + new string(' ', errorMessage.Length - 2) + "|");
             Console.WriteLine(new string('-', errorMessage.Length));
             Console.ResetColor();
